@@ -95,3 +95,23 @@ btnHold.addEventListener('click', function () {
 });
 
 btnNew.addEventListener('click', init);
+
+//Modal Logic//
+
+const modal = document.querySelector('.modal');
+const btnNPlay = document.querySelector('.btn--play');
+
+// toggle modal function
+const toggleModal = function () {
+  modal.classList.toggle('hidden');
+};
+
+//play button
+btnNPlay.addEventListener('click', toggleModal);
+
+// close modal when the Esc key is pressed
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    toggleModal();
+  }
+});
